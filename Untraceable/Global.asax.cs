@@ -16,8 +16,15 @@ namespace Untraceable
         {
             AreaRegistration.RegisterAllAreas();
 
+            HideServerInfo();
+
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+        }
+
+        private void HideServerInfo()
+        {
+            MvcHandler.DisableMvcResponseHeader = true;
         }
     }
 }
