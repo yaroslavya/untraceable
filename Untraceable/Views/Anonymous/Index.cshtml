@@ -9,6 +9,26 @@
 <html>
     <head>
         <title>Anonymous</title>
+        <script>
+            function getCookie(c_name) {
+                var i, x, y, ARRcookies = document.cookie.split(";");
+                for (i = 0; i < ARRcookies.length; i++) {
+                    x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                    y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                    x = x.replace(/^\s+|\s+$/g, "");
+                    if (x == c_name) {
+                        return unescape(y);
+                    }
+                }
+            }
+
+            if (getCookie("classified") == undefined)
+                console.log("Cookies are protected. Nobody can get them with javascript.");
+            else {
+                console.log("We are vulnerable. Our classified cookie value is below:");
+                console.log("classified: " + getCookie("classified"));
+            }
+        </script>
     </head>
     <body>
         <div>

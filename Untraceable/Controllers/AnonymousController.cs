@@ -18,6 +18,9 @@ namespace Untraceable.Controllers
         // GET: /Anonymous/
         public ActionResult Index()
         {
+            //TODO: Set cookies and check ifthey are accessible via javascript.
+            Response.SetCookie(new HttpCookie("classified","A very important data"));
+
             return View();
         }
 
