@@ -1,4 +1,8 @@
+#visual studio
 [Bb]in
 [Oo]bj
 *.suo
 *.user
+
+#resharper
+_ReSharper*
